@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ecd51cd8-4929-4ea2-b1c6-3053e70c71e6" name="Default Changelist" comment="" />
+    <list default="true" id="ecd51cd8-4929-4ea2-b1c6-3053e70c71e6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,7 +20,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="JupyterTrust" id="276d5642-57d4-4c4f-b1d5-6057218e029d" />
+  <component name="JupyterTrust" id="4068dccc-7cf0-445b-bdba-8b3cb111b789" />
   <component name="ProjectId" id="1iHRehThyn8duGtwD1xsPkZW6fD" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -29,7 +31,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/main.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager">
@@ -65,6 +67,7 @@
       <option name="presentableId" value="Default" />
       <updated>1601562627673</updated>
       <workItem from="1601562632494" duration="704000" />
+      <workItem from="1601563986065" duration="62000" />
     </task>
     <servers />
   </component>
@@ -102,6 +105,6 @@
     <state x="209" y="103" width="1022" height="733" key="SettingsEditor/0.31.1440.869@0.31.1440.869" timestamp="1601562736372" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/webKeepPass$main.coverage" NAME="main Coverage Results" MODIFIED="1601563303390" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/webKeepPass$main.coverage" NAME="main Coverage Results" MODIFIED="1601564013324" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
