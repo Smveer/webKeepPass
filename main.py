@@ -17,7 +17,7 @@ if __name__ == '__main__':
 
 @route('/')
 def index():
-    return template('index.html', name="Manveer", entries=str(group.entries))
+    return template('index.html', name="KEEPASS WEB by Students", entries=str(group.entries))
 
 
 run(host='localhost', port=8088, reloader=True)
