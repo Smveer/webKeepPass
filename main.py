@@ -1,4 +1,5 @@
-from bottle import route, run, template, static_file
+from bottle import route, get, run, template, static_file, post, request
+import os.path
 from pykeepass import PyKeePass
 
 # load database
@@ -17,10 +18,28 @@ if __name__ == '__main__':
 
 @route('/')
 def index():
-    return template('index.html', name="KEEPASS WEB by Students", entries=str(group.entries))
+    return template('login')
 
 @route('/ressources/<path:path>')
 def callback(path):
     return static_file(path, root="./ressources/")
+
+@get('/login')
+def login():
+    return template('login')
+
+@route('/login', method='POST')
+def do_login():
+    nameDB = request.forms.get('nameDB')
+    inputPassword = request.forms.get('inputPassword')
+    if not os.path.exists('./ressources/' + str(nameDB)):
+        return str(nameDB)
+    else:
+        try:
+            kp = PyKeePass('./ressources/' + str(nameDB), password=inputPassword)
+            return 'Welcome'
+        except (RuntimeError, TypeError, NameError):
+            return 'Password not valid'
+
 
 run(host='localhost', port=8088, reloader=True, debug=True)
