@@ -1,4 +1,4 @@
-from bottle import route, run, template
+from bottle import route, run, template, static_file
 from pykeepass import PyKeePass
 
 # load database
@@ -19,5 +19,8 @@ if __name__ == '__main__':
 def index():
     return template('index.html', name="KEEPASS WEB by Students", entries=str(group.entries))
 
+@route('/ressources/<path:path>')
+def callback(path):
+    return static_file(path, root="./ressources/")
 
-run(host='localhost', port=8088, reloader=True)
+run(host='localhost', port=8088, reloader=True, debug=True)
