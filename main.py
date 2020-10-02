@@ -20,7 +20,7 @@ if __name__ == '__main__':
 
 @route('/')
 def index():
-    return template('login')
+    return template('login', loginError = '')
 
 @route('/ressources/<path:path>')
 def callback(path):
@@ -28,20 +28,20 @@ def callback(path):
 
 @get('/login')
 def login():
-    return template('login')
+    return template('login', loginError = '')
 
 @route('/login', method='POST')
 def do_login():
     nameDB = request.forms.get('nameDB')
     inputPassword = request.forms.get('inputPassword')
     if not os.path.exists('./ressources/' + str(nameDB)):
-        return str(nameDB)
+        return template('login', loginError='<div class="alert alert-danger" role="alert">Please enter a correct filename (with extension)</div>')
     else:
         try:
             kp = PyKeePass('./ressources/' + str(nameDB), password=inputPassword)
             return 'Welcome'
         except (RuntimeError, TypeError, NameError, CredentialsError):
-            return 'Password not valid'
+            return template('login', loginError='<div class="alert alert-danger" role="alert">Please enter a correct password</div>')
 
 
 run(host='localhost', port=8088, reloader=True, debug=True)
