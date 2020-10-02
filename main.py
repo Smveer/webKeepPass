@@ -2,7 +2,9 @@ from bottle import route, get, run, template, static_file, post, request
 import os.path
 from pykeepass import PyKeePass
 
-# load database
+# password error management
+from pykeepass.exceptions import CredentialsError
+
 kp = PyKeePass('ressources/Database.kdbx', password='password')
 
 group = kp.find_groups(name='New Group1', first=True)
@@ -38,7 +40,7 @@ def do_login():
         try:
             kp = PyKeePass('./ressources/' + str(nameDB), password=inputPassword)
             return 'Welcome'
-        except (RuntimeError, TypeError, NameError):
+        except (RuntimeError, TypeError, NameError, CredentialsError):
             return 'Password not valid'
 
 

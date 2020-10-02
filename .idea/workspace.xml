@@ -20,8 +20,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ecd51cd8-4929-4ea2-b1c6-3053e70c71e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ressources/css/login.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -97,6 +95,7 @@
       <workItem from="1601562632494" duration="704000" />
       <workItem from="1601563986065" duration="62000" />
       <workItem from="1601564104744" duration="213000" />
+      <workItem from="1601620557710" duration="832000" />
     </task>
     <servers />
   </component>
@@ -113,6 +112,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="178" y="126" width="1084" height="711" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601562703036">
@@ -123,30 +123,30 @@
       <screen x="0" y="31" width="1440" height="869" />
     </state>
     <state x="503" y="239" width="434" height="487" key="FileChooserDialogImpl/0.31.1440.869@0.31.1440.869" timestamp="1601562695565" />
-    <state width="1874" height="338" key="GridCell.Tab.0.bottom" timestamp="1601570144311">
-      <screen x="0" y="31" width="1920" height="1049" />
+    <state width="1668" height="338" key="GridCell.Tab.0.bottom" timestamp="1601571431433">
+      <screen x="0" y="31" width="1714" height="893" />
     </state>
     <state width="1394" height="218" key="GridCell.Tab.0.bottom/0.31.1440.869@0.31.1440.869" timestamp="1601564318300" />
-    <state width="1668" height="277" key="GridCell.Tab.0.bottom/0.31.1714.893@0.31.1714.893" timestamp="1601566960738" />
-    <state width="1874" height="338" key="GridCell.Tab.0.bottom/0.31.1920.1049@0.31.1920.1049" timestamp="1601570144311" />
-    <state width="1874" height="338" key="GridCell.Tab.0.center" timestamp="1601570144310">
-      <screen x="0" y="31" width="1920" height="1049" />
+    <state width="1668" height="338" key="GridCell.Tab.0.bottom/0.31.1714.893@0.31.1714.893" timestamp="1601571431433" />
+    <state width="1874" height="338" key="GridCell.Tab.0.bottom/0.31.1920.1049@0.31.1920.1049" timestamp="1601571181238" />
+    <state width="1668" height="338" key="GridCell.Tab.0.center" timestamp="1601571431430">
+      <screen x="0" y="31" width="1714" height="893" />
     </state>
     <state width="1394" height="218" key="GridCell.Tab.0.center/0.31.1440.869@0.31.1440.869" timestamp="1601564318299" />
-    <state width="1668" height="277" key="GridCell.Tab.0.center/0.31.1714.893@0.31.1714.893" timestamp="1601566960736" />
-    <state width="1874" height="338" key="GridCell.Tab.0.center/0.31.1920.1049@0.31.1920.1049" timestamp="1601570144310" />
-    <state width="1874" height="338" key="GridCell.Tab.0.left" timestamp="1601570144309">
-      <screen x="0" y="31" width="1920" height="1049" />
+    <state width="1668" height="338" key="GridCell.Tab.0.center/0.31.1714.893@0.31.1714.893" timestamp="1601571431430" />
+    <state width="1874" height="338" key="GridCell.Tab.0.center/0.31.1920.1049@0.31.1920.1049" timestamp="1601571181237" />
+    <state width="1668" height="338" key="GridCell.Tab.0.left" timestamp="1601571431428">
+      <screen x="0" y="31" width="1714" height="893" />
     </state>
     <state width="1394" height="218" key="GridCell.Tab.0.left/0.31.1440.869@0.31.1440.869" timestamp="1601564318298" />
-    <state width="1668" height="277" key="GridCell.Tab.0.left/0.31.1714.893@0.31.1714.893" timestamp="1601566960736" />
-    <state width="1874" height="338" key="GridCell.Tab.0.left/0.31.1920.1049@0.31.1920.1049" timestamp="1601570144309" />
-    <state width="1874" height="338" key="GridCell.Tab.0.right" timestamp="1601570144310">
-      <screen x="0" y="31" width="1920" height="1049" />
+    <state width="1668" height="338" key="GridCell.Tab.0.left/0.31.1714.893@0.31.1714.893" timestamp="1601571431428" />
+    <state width="1874" height="338" key="GridCell.Tab.0.left/0.31.1920.1049@0.31.1920.1049" timestamp="1601571181236" />
+    <state width="1668" height="338" key="GridCell.Tab.0.right" timestamp="1601571431432">
+      <screen x="0" y="31" width="1714" height="893" />
     </state>
     <state width="1394" height="218" key="GridCell.Tab.0.right/0.31.1440.869@0.31.1440.869" timestamp="1601564318300" />
-    <state width="1668" height="277" key="GridCell.Tab.0.right/0.31.1714.893@0.31.1714.893" timestamp="1601566960737" />
-    <state width="1874" height="338" key="GridCell.Tab.0.right/0.31.1920.1049@0.31.1920.1049" timestamp="1601570144310" />
+    <state width="1668" height="338" key="GridCell.Tab.0.right/0.31.1714.893@0.31.1714.893" timestamp="1601571431432" />
+    <state width="1874" height="338" key="GridCell.Tab.0.right/0.31.1920.1049@0.31.1920.1049" timestamp="1601571181238" />
     <state x="279" y="118" width="1022" height="733" key="SettingsEditor" timestamp="1601570007221">
       <screen x="0" y="31" width="1920" height="1049" />
     </state>
@@ -154,6 +154,6 @@
     <state x="279" y="118" key="SettingsEditor/0.31.1920.1049@0.31.1920.1049" timestamp="1601570007221" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/webKeepPass$main.coverage" NAME="main Coverage Results" MODIFIED="1601570144298" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/webKeepPass$main.coverage" NAME="main Coverage Results" MODIFIED="1601620581967" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
