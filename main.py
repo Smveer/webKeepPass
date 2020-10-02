@@ -34,7 +34,7 @@ def do_login():
     else:
         try:
             kp = PyKeePass('./ressources/' + str(nameDB), password=inputPassword)
-            return 'Welcome'
+            return template('index', welcomeMsg='<div class="alert alert-success" id="success-alert" role="alert">Welcome to the Datadabase editing interface!<button type="button" class="close" data-dismiss="alert">x</button></div>', dbRoot=kp.entries, dbName=kp.filename)
         except (RuntimeError, TypeError, NameError, CredentialsError):
             return template('login', loginError='<div class="alert alert-danger" role="alert">Please enter a correct password</div>')
 
