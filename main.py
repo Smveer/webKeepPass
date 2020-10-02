@@ -5,10 +5,6 @@ from pykeepass import PyKeePass
 # password error management
 from pykeepass.exceptions import CredentialsError
 
-kp = PyKeePass('ressources/Database.kdbx', password='password')
-
-group = kp.find_groups(name='New Group1', first=True)
-
 
 def print_hi(name):
     # Use a breakpoint in the code line below to debug your script.
@@ -18,19 +14,18 @@ def print_hi(name):
 if __name__ == '__main__':
     print_hi('PyCharm')
 
-@route('/')
-def index():
-    return template('login', loginError = '')
-
+#Routage de tout ce qui référencé dans le dossier "ressources" vers le tout ce qui dans le dossier local "ressources"
 @route('/ressources/<path:path>')
 def callback(path):
     return static_file(path, root="./ressources/")
 
-@get('/login')
+#Routage de /login vers la page de connexion
+@route('/login')
 def login():
     return template('login', loginError = '')
 
-@route('/login', method='POST')
+#Routage de /login vers la page de connexion AVEC LA METHODE POST
+@post('/login')
 def do_login():
     nameDB = request.forms.get('nameDB')
     inputPassword = request.forms.get('inputPassword')
