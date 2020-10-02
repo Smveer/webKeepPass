@@ -30,7 +30,19 @@
     <main>
         {{!welcomeMsg}}
         <section class="text-container">
-            <p>{{!dbEntries}}</p>
+            <p>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Title</th>
+                            <th scope="col">Username</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{!dbEntries}}
+                    </tbody>
+                </table>
+            </p>
         </section>
 
     </main>
