@@ -34,10 +34,14 @@ def do_login():
     else:
         try:
             kp = PyKeePass('./ressources/' + str(nameDB), password=inputPassword)
-            entries="<ul>"
+            entries='<table class="table table-striped"><thead><tr><th scope="col">Title</th><th scope="col">Username</th></tr></thead><tbody>'
             for entry in kp.entries:
-                entries+="<li>"+ str(entry) +"</li>"
-            entries+="</ul>"
+                x = str(entry).split('"', 1)
+                x = str(x[1]).split('(', 1)
+                title = str(x[0])
+                username = str(x[1]).split(')', 1)
+                entries+="<tr><td>" + str(title) + "</td><td>" + str(username[0]) + "</td></tr>"
+            entries+="</tbody></table>"
             return template('index', welcomeMsg='<div class="alert alert-success" id="success-alert" role="alert">Welcome to the Datadabase editing interface!<button type="button" class="close" data-dismiss="alert">x</button></div>', dbEntries=entries)
         except (RuntimeError, TypeError, NameError, CredentialsError):
             return template('login', loginError='<div class="alert alert-danger" role="alert">Please enter a correct password</div>')
