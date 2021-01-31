@@ -72,17 +72,17 @@ def printGroup(path):
                 x = str(entry).split('"', 1)
                 x = str(x[1]).split('(', 1)
                 title = str(x[0])  # split pour récupérer le Title
+                username = str(x[1]).split(')', 1)  # split pour récupérer le Username
                 slash = "/"
                 count = 0
                 for indexSlash in title:
                     if(str(slash) == str(indexSlash)):
                         count += 1
-                        print(count)
-                        groupTitle = str(title).split('/', count)
-                        if(str(groupTitle[count-1]) + '/' == str(path)):
-                            username = str(x[1]).split(')', 1)  # split pour récupérer le Username
-                            entries += "<tr><td>" + str(title) + "</td><td>" + str(
-                                username[0]) + "</td></tr>"  # concaténer ligne à chaque itération
+                groupTitle = str(title).split('/', 1)
+                if(count == 1):
+                    if(str(groupTitle[0]) + "/" == str(path)):
+                        entries += "<tr><td>" + str(title) + "</td><td>" + str(
+                            username[0]) + "</td></tr>"  # concaténer ligne à chaque itération
             return template('group', dbEntries=entries)
     return template('home')
 
