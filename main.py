@@ -65,7 +65,26 @@ def groupmanager():
 
 @get('/home/<path:path>')
 def printGroup(path):
-    print(str(path))
-    return template('group')
+    for group in kp.groups:
+        if str(path) in str(group):
+            entries=""
+            for entry in kp.entries:  # pour chaque element (entry) de kp.entries faire:
+                x = str(entry).split('"', 1)
+                x = str(x[1]).split('(', 1)
+                title = str(x[0])  # split pour récupérer le Title
+                slash = "/"
+                count = 0
+                for indexSlash in title:
+                    if(str(slash) == str(indexSlash)):
+                        count += 1
+                        print(count)
+                        groupTitle = str(title).split('/', count)
+                        if(str(groupTitle[count-1]) + '/' == str(path)):
+                            username = str(x[1]).split(')', 1)  # split pour récupérer le Username
+                            entries += "<tr><td>" + str(title) + "</td><td>" + str(
+                                username[0]) + "</td></tr>"  # concaténer ligne à chaque itération
+            return template('group', dbEntries=entries)
+    return template('home')
+
 
 run(host='localhost', port=8088, reloader=True, debug=True)
