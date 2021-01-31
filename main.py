@@ -63,8 +63,9 @@ def groupmanager():
         groups+="<tr><td><a href='" + str(title) + "'>" + str(title) + "</a></td></tr>"
     return template('groupmanager', dbGroups=groups)
 
-# @get('/home/<group>')
-# def printGroup():
-#         print('{group}')
+@get('/home/<path:path>')
+def printGroup(path):
+    print(str(path))
+    return template('group')
 
 run(host='localhost', port=8088, reloader=True, debug=True)
