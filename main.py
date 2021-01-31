@@ -39,9 +39,11 @@ def do_login():
         return template('login', loginError='<div class="alert alert-danger" role="alert">Please enter a correct filename (with extension)</div>') #retour au login.html avec erreur si chemin n'existe pas
     else:
         try:
+            global kp
             kp = PyKeePass('./ressources/' + str(nameDB), password=inputPassword) #identification au keepass
             entries=""
             for entry in kp.entries: #pour chaque element (entry) de kp.entries faire:
+                print(str(entry))
                 x = str(entry).split('"', 1)
                 x = str(x[1]).split('(', 1)
                 title = str(x[0]) #split pour récupérer le Title
@@ -52,5 +54,14 @@ def do_login():
             return template('login', loginError='<div class="alert alert-danger" role="alert">Please enter a correct password</div>') #retour au login.html avec erreur si password pas bon
 ################################################################
 
+@get('/login/groupmanager')
+def groupmanager():
+    groups=''
+    for group in kp.groups:
+        x = str(group).split('"', 1)
+        title = str(x[1])
+        print(title)
+        groups+="<tr><td>" + str(title) + "</td></tr>"
+    return template('groupmanager', dbGroups='groups')
 
 run(host='localhost', port=8088, reloader=True, debug=True)

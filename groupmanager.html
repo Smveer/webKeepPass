@@ -19,8 +19,8 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class="nav-item nav-link active" href="#">Entries Manager <span class="sr-only">(current)</span></a>
-              <a class="nav-item nav-link" href="/login/groupmanager">Groups Manager</a>
+              <a class="nav-item nav-link active" href="/login">Entries Manager <span class="sr-only">(current)</span></a>
+              <a class="nav-item nav-link" href="#">Groups Manager</a>
               <a class="nav-item nav-link" href="#"></a>
               <a class="nav-item nav-link disabled" href="#">Disabled</a>
             </div>
@@ -28,7 +28,6 @@
         </nav>
     </header>
     <main>
-        {{!welcomeMsg}}
         <section class="text-container">
             <p>
                 <table class="table table-striped">
@@ -39,7 +38,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {{!dbEntries}}
+                        {{!dbGroups}}
                     </tbody>
                 </table>
             </p>
