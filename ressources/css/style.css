@@ -46,3 +46,24 @@ body{
     font-size: 2vh;
     color: aliceblue;
 }
+
+/* Password invisibility
+-------------------------------------------------- */
+
+td.password {
+    background-color: #303030;
+    color: #303030;
+    user-select: none;
+    max-width: inherit;
+    width: inherit;
+    transition: all 200ms ease;
+    transition-property: background-color, width;
+}
+
+td.password:hover {
+    background-color: dodgerblue;
+    color: white;
+    font-weight: bold;
+    transition: all 200ms ease;
+    transition-property: background-color, width;
+}
