@@ -56,7 +56,7 @@ def do_home():
                 varTab[1][1].append(username[0])
                 varTab[1][2].append(password)
                 idUser += 1
-                entries+="<tr><td>" + str(title) + "</td><td>" + str(username[0]) + "</td><td class=\"password\">" + str(password) + "</td><td><a href=\"/home/entry?id=" + str(idUser) + "\">Manage</a></td></tr>" #concaténer ligne à chaque itération
+                entries+="<tr><td>" + str(title) + "</td><td>" + str(username[0]) + "</td><td class=\"password\">" + str(password) + "</td><td><a href=\"/home/entry/" + str(idUser) + "\">Manage</a></td></tr>" #concaténer ligne à chaque itération
             return template('index', welcomeMsg='<div class="alert alert-success" id="success-alert" role="alert">Welcome to the Datadabase editing interface!<button type="button" class="close" data-dismiss="alert">x</button></div>', dbEntries=entries)
         except (RuntimeError, TypeError, NameError, CredentialsError): #Si erreur lors de l'identification faire:
             return template('home', homeError='<div class="alert alert-danger" role="alert">Please enter a correct password</div>') #retour au home.html avec erreur si password pas bon
@@ -71,6 +71,18 @@ def groupmanager():
         title = str(x[0])
         groups+="<tr><td><a href='" + str(title) + "'>" + str(title) + "</a></td></tr>"
     return template('groupmanager', dbGroups=groups)
+
+@get('/home/entry/<path:path>')
+def editEntry(path):
+    print('debut')
+    idEntry = path
+    titleEntry = varTab[1][0][int(idEntry)]
+    usernameEntry = varTab[1][1][int(idEntry)]
+    passwordEntry = varTab[1][2][int(idEntry)]
+    print('fin')
+    print(titleEntry, " ", usernameEntry, " ", passwordEntry)
+    return template('entry', titleEntry = titleEntry, usernameEntry = usernameEntry, passwordEntry = passwordEntry)
+
 
 @get('/home/<path:path>')
 def printGroup(path):
@@ -106,17 +118,5 @@ def printGroup(path):
                         entries += "<tr><td>" + str(groupTitle[count]) + "</td><td>" + str(
                             username[0]) + "</td><td class=\"password\">" + str(password) + "</td></tr>" # concaténer ligne à chaque itération
             return template('group', dbEntries=entries)
-
-@get('/home/entry<path:path>')
-def editEntry():
-    print('debut')
-    idEntry = request.forms.get('id')
-    titleEntry = varTab[1][0][idEntry]
-    usernameEntry = varTab[1][1][idEntry]
-    passwordEntry = varTab[1][2][idEntry]
-    print('fin')
-    print(titleEntry, " ", usernameEntry, " ", passwordEntry)
-    return template('entry', titleEntry = titleEntry, usernameEntry = usernameEntry, passwordEntry = passwordEntry)
-
 
 run(host='localhost', port=8088, reloader=True, debug=True)
