@@ -82,7 +82,7 @@ def printGroup(path):
                 groupTitle = str(title).split('/', count)
                 if(count == 1):
                     if(str(groupTitle[count-1]) + "/" == str(path)):
-                        entries += "<tr><td>" + str(title) + "</td><td>" + str(
+                        entries += "<tr><td>" + str(groupTitle[count]) + "</td><td>" + str(
                             username[0]) + "</td></tr>" # concaténer ligne à chaque itération
                 else:
                     groupname = ""
@@ -92,7 +92,7 @@ def printGroup(path):
                         else:
                             groupname = str(groupname) + "/" + (groupTitle[i])
                     if (str(groupname) + "/" == str(path)):
-                        entries += "<tr><td>" + str(title) + "</td><td>" + str(
+                        entries += "<tr><td>" + str(groupTitle[count]) + "</td><td>" + str(
                             username[0]) + "</td></tr>"  # concaténer ligne à chaque itération
             return template('group', dbEntries=entries)
     return template('home')
