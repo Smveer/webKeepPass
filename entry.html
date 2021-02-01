@@ -38,22 +38,22 @@
                              <!-- Background image for card set in CSS! -->
                           </div>
                           <div class="card-body">
-                            <h5 class="card-title text-center">Manager Entry : .....</h5>
+                            <h5 class="card-title text-center">Manager Entry : {{!titleEntry}}</h5>
                             <form class="form-signin" action="/home/entry" method="post">
                               <div class="form-label-group">
-                                <input type="text" id="inputTitle" class="form-control" placeholder="{{!titleEntry}}" required autofocus>
+                                <input type="text" id="inputTitle" class="form-control" placeholder="{{!titleEntry}}" value="{{!titleEntry}}" required autocomplete="off" autofocus>
                               </div>
 
                                 <hr>
 
                               <div class="form-label-group">
-                                <input type="text" id="inputUsername" class="form-control" placeholder="{{!usernameEntry}}" required>
+                                <input type="text" id="inputUsername" class="form-control" placeholder="{{!usernameEntry}}" value="{{!usernameEntry}}" autocomplete="off" required>
                               </div>
 
                                 <hr>
 
                               <div class="form-label-group">
-                                <input type="password" id="inputPassword" class="form-control" placeholder="{{!passwordEntry}}" required>
+                                <input type="password" id="inputPassword" class="form-control" placeholder="Password" value="{{!passwordEntry}}" autocomplete="off" required>
                               </div>
 
                               <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Submit</button>

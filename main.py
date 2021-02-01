@@ -75,7 +75,7 @@ def groupmanager():
 @get('/home/entry/<path:path>')
 def editEntry(path):
     print('debut')
-    idEntry = path
+    idEntry = int(path) - 1
     titleEntry = varTab[1][0][int(idEntry)]
     usernameEntry = varTab[1][1][int(idEntry)]
     passwordEntry = varTab[1][2][int(idEntry)]
