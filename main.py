@@ -81,12 +81,15 @@ def editEntry(path):
     passwordEntry = varTab[1][2][int(idEntry)]
     print('fin')
     print(titleEntry, " ", usernameEntry, " ", passwordEntry)
-    return template('entry', titleEntry = titleEntry, usernameEntry = usernameEntry, passwordEntry = passwordEntry)
+    return template('entry', titleEntry = titleEntry, usernameEntry = usernameEntry, passwordEntry = passwordEntry, idEntry = idEntry)
 
+@get('/home/entry?id=<path:path>')
+def deleteEntry(path):
+    print(str(path), ' est l\'ID')
+    return template('/home')
 
 @get('/home/<path:path>')
 def printGroup(path):
-    print(str(kp.groups))
     for group in kp.groups:
         if str(path) in str(group):
             entries=""
