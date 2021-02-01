@@ -65,6 +65,7 @@ def groupmanager():
 
 @get('/home/<path:path>')
 def printGroup(path):
+    print(str(kp.groups))
     for group in kp.groups:
         if str(path) in str(group):
             entries=""
@@ -78,9 +79,19 @@ def printGroup(path):
                 for indexSlash in title:
                     if(str(slash) == str(indexSlash)):
                         count += 1
-                groupTitle = str(title).split('/', 1)
+                groupTitle = str(title).split('/', count)
                 if(count == 1):
-                    if(str(groupTitle[0]) + "/" == str(path)):
+                    if(str(groupTitle[count-1]) + "/" == str(path)):
+                        entries += "<tr><td>" + str(title) + "</td><td>" + str(
+                            username[0]) + "</td></tr>" # concaténer ligne à chaque itération
+                else:
+                    groupname = ""
+                    for i in range(count):
+                        if(i == 0):
+                            groupname = str(groupname) + (groupTitle[i])
+                        else:
+                            groupname = str(groupname) + "/" + (groupTitle[i])
+                    if (str(groupname) + "/" == str(path)):
                         entries += "<tr><td>" + str(title) + "</td><td>" + str(
                             username[0]) + "</td></tr>"  # concaténer ligne à chaque itération
             return template('group', dbEntries=entries)
