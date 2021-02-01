@@ -101,10 +101,7 @@ def printGroup(path):
 
 @get('/home/entry')
 def editEntry():
-    print("hello")
     return template('entry')
-
-    return template('home')
 
 
 run(host='localhost', port=8088, reloader=True, debug=True)

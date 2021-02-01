@@ -67,3 +67,22 @@ td.password:hover {
     transition: all 200ms ease;
     transition-property: background-color, width;
 }
+
+/* Entry manager
+-------------------------------------------------- */
+
+.btn-google {
+    background-color: #ea4335 !important;
+    color: white !important;
+    opacity: 1;
+    transition: opacity 200ms;
+}
+
+.btn-google:hover {
+    opacity: 0.85;
+    transition: opacity 200ms;
+}
+
+input#inputPassword {
+    margin-bottom: 5%;
+}
