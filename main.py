@@ -40,15 +40,23 @@ def do_home():
     else:
         try:
             global kp
+            global varTab
+            varTab = [[], [[], [], []]]
             kp = PyKeePass('./ressources/' + str(nameDB), password=inputPassword) #identification au keepass
             entries=""
+            idUser = 0
             for entry in kp.entries: #pour chaque element (entry) de kp.entries faire:
                 x = str(entry).split('"', 1)
                 x = str(x[1]).split('(', 1)
                 title = str(x[0]) #split pour récupérer le Title
                 username = str(x[1]).split(')', 1) #split pour récupérer le Username
                 password = entry.password
-                entries+="<tr><td>" + str(title) + "</td><td>" + str(username[0]) + "</td><td>" + str(password) + "</td></tr>" #concaténer ligne à chaque itération
+                varTab[0].append(idUser)
+                varTab[1][0].append(title)
+                varTab[1][1].append(username[0])
+                varTab[1][2].append(password)
+                idUser += 1
+                entries+="<tr><td>" + str(title) + "</td><td>" + str(username[0]) + "</td><td class=\"password\">" + str(password) + "</td><td><a href=\"/home/entry?id=" + str(idUser) + "\">Manage</a></td></tr>" #concaténer ligne à chaque itération
             return template('index', welcomeMsg='<div class="alert alert-success" id="success-alert" role="alert">Welcome to the Datadabase editing interface!<button type="button" class="close" data-dismiss="alert">x</button></div>', dbEntries=entries)
         except (RuntimeError, TypeError, NameError, CredentialsError): #Si erreur lors de l'identification faire:
             return template('home', homeError='<div class="alert alert-danger" role="alert">Please enter a correct password</div>') #retour au home.html avec erreur si password pas bon
@@ -86,7 +94,7 @@ def printGroup(path):
                 if(count == 1):
                     if(str(groupTitle[count-1]) + "/" == str(path)):
                         entries += "<tr><td>" + str(groupTitle[count]) + "</td><td>" + str(
-                            username[0]) + "</td><td>" + str(password) + "</td></tr>" # concaténer ligne à chaque itération
+                            username[0]) + "</td><td class=\"password\">" + str(password) + "</td></tr>" # concaténer ligne à chaque itération
                 else:
                     groupname = ""
                     for i in range(count):
@@ -96,12 +104,19 @@ def printGroup(path):
                             groupname = str(groupname) + "/" + (groupTitle[i])
                     if (str(groupname) + "/" == str(path)):
                         entries += "<tr><td>" + str(groupTitle[count]) + "</td><td>" + str(
-                            username[0]) + "</td><td>" + str(password) + "</td></tr>" # concaténer ligne à chaque itération
+                            username[0]) + "</td><td class=\"password\">" + str(password) + "</td></tr>" # concaténer ligne à chaque itération
             return template('group', dbEntries=entries)
 
-@get('/home/entry')
+@get('/home/entry<path:path>')
 def editEntry():
-    return template('entry')
+    print('debut')
+    idEntry = request.forms.get('id')
+    titleEntry = varTab[1][0][idEntry]
+    usernameEntry = varTab[1][1][idEntry]
+    passwordEntry = varTab[1][2][idEntry]
+    print('fin')
+    print(titleEntry, " ", usernameEntry, " ", passwordEntry)
+    return template('entry', titleEntry = titleEntry, usernameEntry = usernameEntry, passwordEntry = passwordEntry)
 
 
 run(host='localhost', port=8088, reloader=True, debug=True)
